@@ -17,8 +17,6 @@ const SignUpForm = () => {
 	const [formFields, setFormFields] = useState(defaultFormFields);
 	const {displayName, email, password, confirmPassword} = formFields;
 
-	console.log(formFields);
-
 	const resetFormFields = () => {
 		setFormFields(defaultFormFields);
 	}
@@ -27,7 +25,7 @@ const SignUpForm = () => {
 		event.preventDefault();
 
 		if(password !== confirmPassword){
-			alert("passwords do not match");
+			alert("password ds do not match");
 			return;
 		}
 
@@ -36,6 +34,7 @@ const SignUpForm = () => {
 				email, 
 				password
 			);
+
 
 			await createUserDocumentFromAuth(user, {displayName})
 			resetFormFields();
